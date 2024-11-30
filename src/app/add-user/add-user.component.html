@@ -1,0 +1,19 @@
+<form (ngSubmit)="onSubmit()">
+    <div class="container-fluid">
+        <div class="mb-3">
+            <label for="name" class="form-label">Name</label>
+            <input type="text" [(ngModel)]="name" class="form-control" name="name"/>
+        </div>
+        <div class="mb-3">
+            <label for="exampleFormControlTextarea1" class="form-label">Task</label>
+            <input type="text" [(ngModel)]="task" class="form-control" name="task" />
+        </div>
+        <div class="mb-3">
+            <button type="submit" class="btn btn-info">Add</button>
+            <span> | </span>
+            <button type="button" class="btn btn-success" (click)="onReset()">Reset</button>
+        </div>
+    </div>
+</form>
+
+<app-user-item (userDelete)="deleteUser($event)" (getUserById)="getUserById($event)"></app-user-item>

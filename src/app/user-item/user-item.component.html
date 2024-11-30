@@ -1,0 +1,24 @@
+<!-- <td *ngFor="let key of userKeys">{{ users[key] }}</td> -->
+
+<table class="table table-bordered table-striped">
+    <thead class="table-dark">
+        <tr>
+            <th>Id</th>
+            <th>Name</th>
+            <th>Task</th>
+            <th>Action</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let user of users">
+            <td>{{ user.id }}</td>
+            <td>{{ user.name }}</td>
+            <td>{{ user.task }}</td>
+            <td>
+                <button class="btn btn-warning" (click)="getUserbyId(user.id)">Update</button>
+                <span> | </span>
+                <button class="btn btn-danger" (click)="onClick(user)">Delete</button>
+            </td>
+        </tr>
+    </tbody>
+</table>
